@@ -1,0 +1,23 @@
+---
+tag: ruby
+layout: default
+---
+
+<h1 class="post-title">Blog articles tagged "{{ page.tag }}"</h1>
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+<p>
+<a href="{{ "/" | prepend: site.baseurl }}"><i class="fas fa-file-alt"></i> <b>Blog articles</b></a> |
+<a href="{{ "/continuous_integration/" | prepend: site.baseurl }}"><i class="fas fa-cube"></i> <b>Continuous Integration</b></a> |
+<a href="{{ "/tech_tips/" | prepend: site.baseurl }}"><i class="fas fa-lightbulb"></i> <b>Tech tips</b></a> |
+<a href="{{ "/news/" | prepend: site.baseurl }}"><i class="fas fa-lightbulb"></i> <b>News</b></a>
+</p>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    {% if post.tags contains page.tag %}
+      {% include post_trailer.html post=post %}
+    {% endif %}
+  {% endfor %}
+</ul>

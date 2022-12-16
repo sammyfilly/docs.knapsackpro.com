@@ -10,6 +10,10 @@ permalink: /:year/:title
 twitter_username: KnapsackPro
 github_repository: https://github.com/KnapsackPro/docs.knapsackpro.com
 exclude: ["docusaurus"]
+collections:
+  tags:
+    output: tags
+    permalink: tags/:path/
 
 # Build settings
 markdown: kramdown
